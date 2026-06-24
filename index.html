@@ -398,7 +398,10 @@
   const DATA = RAW.data; // data[state][year][category] = [account, revised, budget]
   const VAL_IDX = {account:0, revised:1, budget:2};
 
-  const STATE_COLORS = ["#FF9933","#138808","#8C3B3B","#6B6F7A","#2E3A5C","#B7A14B","#5C7A8C","#A0522D"];
+const STATE_COLORS = ["#FF9933","#138808","#8C3B3B","#6B6F7A","#2E3A5C","#B7A14B","#5C7A8C","#A0522D",
+    "#C2185B","#00897B","#5E35B1","#827717","#AD1457","#283593","#6D4C41","#558B2F",
+    "#D84315","#00695C","#4527A0","#9E9D24","#37474F","#BF360C","#1565C0","#7B1FA2",
+    "#33691E","#E65100","#0277BD","#4E342E","#F9A825","#26A69A","#8D6E63"];
 
   let state = {
     year: YEARS[YEARS.length-3], // most recent year that still has closed "Account" figures
@@ -462,7 +465,6 @@
       if(state.trendStates.includes(s)){
         state.trendStates = state.trendStates.filter(x=>x!==s);
       } else {
-        if(state.trendStates.length >= 8){ return; }
         state.trendStates.push(s);
       }
       b.classList.toggle('active');
